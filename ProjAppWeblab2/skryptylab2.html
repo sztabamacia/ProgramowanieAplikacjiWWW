@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Moja strona www</title>
+        <script src="kolorujto.js" type="text/javascript"></script>
+        <script src="timedate.js" type="text/javascript"></script>
+    </head>
+    <body onload="startclock()">
+        <FORM METHOD="POST" NAME="background">
+            <INPUT TYPE="button" VALUE="żółty" ONCLICK="changeBackgroundColor('#FFF000')">
+            <input type="button" value="czarny" onclick="changeBackgroundColor('#000000')">
+            <input type="button" value="biały" onclick="changeBackgroundColor('#FFFFFF')">
+            <input type="button" value="zielony" onclick="changeBackgroundColor('#00FF00')">
+            <input type="button" value="niebieski" onclick="changeBackgroundColor('#0000FF')">
+            <input type="button" value="pomarańczowy" onclick="changeBackgroundColor('#FF8000')">
+            <input type="button" value="szary" onclick="changeBackgroundColor('#c0c0c0')">
+            <input type="button" value="czerwony" onclick="changeBackgroundColor('#FF0000')">
+
+        </form>
+        <h1 id="fajna_data"></h1>
+        <h1>Godzina i data</h1>
+        <div id="zegarek" style="padding: 20px;"></div>
+        <div id="data" style="padding: 20px;"></div>
+
+
+        <FORM METHOD="POST" NAME="color">
+            <INPUT TYPE="button" VALUE="żółty" ONCLICK="changeDateColor('#FFF000')">
+            <input type="button" value="czarny" onclick="changeDateColor('#000000')">
+            <input type="button" value="biały" onclick="changeDateColor('#FFFFFF')">
+            <input type="button" value="zielony" onclick="changeDateColor('#00FF00')">
+            <input type="button" value="niebieski" onclick="changeDateColor('#0000FF')">
+            <input type="button" value="pomarańczowy" onclick="changeDateColor('#FF8000')">
+            <input type="button" value="szary" onclick="changeDateColor('#c0c0c0')">
+            <input type="button" value="czerwony" onclick="changeDateColor('#FF0000')">
+
+        </form>
+
+    </body>
+</html>
