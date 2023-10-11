@@ -5,10 +5,13 @@
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Language" content="pl" />
 	<meta name="Author" content="Maciej Sztabiński" />
+	<script src="kolorujto.js" type="text/javascript"></script>
+	<script src="timedate.js" type="text/javascript"></script>
 	<title>Moje hobby to gry komputerowe</title>
 
 	</head>
-	<body>
+	<body onload="startclock()">
+		
 		<table class="menu">
 			<tr>
 				<td><a href="index.html"><img class="icon" src="images/home.png" alt="strona domowa"></a></td>
@@ -21,6 +24,11 @@
 			</tr>
 		
 		</table>
+
+		<h1>Godzina i data</h1>
+		<div id="zegarek" style="padding: 20px;"></div>
+    	<div id="data" style="padding: 20px;"></div>
+
 		<table class='content'>
 			<tr>
 				<td>
@@ -32,6 +40,9 @@
 						<i>Maciej Sztabiński</i>
 						</div>
 					</div>
+					
+					
+					
 
 					<div class="real-content">
 						<h1>Czym jest gra komputerowa?</h1>
@@ -67,12 +78,13 @@
 							Przebieg akcji gry nazywany jest mechaniką gry (ang. gameplay).</p>
 					</div>
 				</td>
+
+				
 			
 			</tr>
 		
 		</table>
-
-
+		
 
 	</body>
 
