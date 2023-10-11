@@ -1,11 +1,14 @@
 body{
     background-color: #eff780;
+    min-height: 500px;
+    min-width: 500px;
 }
 .menu{
     background-color: rgb(20, 114, 138);
     font-size: 40px;
-    width: 100vw;
+    width: 98vw;
     height: 100px;
+    margin-top: 10px;
 }
 .menu a{
     text-decoration: none;
@@ -17,7 +20,6 @@ body{
 }
 .menu a:hover{
     background-color: rgb(12, 19, 114);
-    border: 3px solid;
 }
 .real-content p{
     font-size: 20px;
@@ -28,21 +30,28 @@ body{
     
 }
 .content div.real-content{
-    color:blue;
+    color:rgb(14, 14, 19);
 }
+.content tr td.colors{
+    background-color: aqua;
+}
+.content tr td{
+    background-color: aliceblue;
+}
+
 .contact{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.contact label{
+.contact span{
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 50px;
     font-weight: 400;
 }
-.contact input.normal{
+.contact input{
     width: 100%;
     border-radius: 20px;
 }
@@ -51,6 +60,7 @@ body{
     height: 300px;
     resize: none;
     border-radius: 20px;
+    text-align: center;
 }
 .contact button.send{
     
@@ -68,6 +78,25 @@ body{
 img.right-image{
     float: right;
     width: 40vw;
+    margin: 10px;
+}
+img.left-image{
+    float: left;
+    width: 40vw;
+    margin: 20px;
+}
+img.left-image2{
+    width: 20vw;
+    float: left;
+    margin: 20px;
+}
+
+.icon{
+    width: 6vw;
+    height: 8vh;
+}
+li{
+    font-size: 25px;
 }
 
 
