@@ -33,37 +33,27 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
                      $nrGrupy = 'X';
                      echo 'Autor: Jan Kowalski '. $nr_indeksu .' grupa '. $nrGrupy.'<br /><br />';
                   ?> -->
-                  <?php
+                <?php
                      // Dynamiczne ładowanie treści strony
-                     $strona = isset($_GET['idp']) ? $_GET['idp'] : '';
-                     if ($strona == '') {
-                        $strona = 'html/glowma.html';
-                     }
-                     elseif ($strona == 'glowma') {
-                        $strona = 'html/glowma.html';
-                     } elseif ($strona == 'contact') {
-                        $strona = 'html/contact.html';
-                     } elseif ($strona == 'rayman') {
-                        $strona = 'html/rayman.html';
-                     } elseif ($strona == 'wot') {
-                        $strona = 'html/wot.html';
-                     } elseif ($strona == 'cs') {
-                        $strona = 'html/cs.html';
-                     } elseif ($strona == 'fifa') {
-                        $strona = 'html/fifa.html';
-                     }
-                     elseif ($strona == 'filmy') {
-                        $strona = 'html/filmy.html';
-                     } else {
-                        echo 'strony nie ma';
-                     }
-
-                     if (file_exists($strona)) {
-                        include($strona);
-                     } else {
-                        echo 'Podstrona nie istnieje.';
-                     }
+                     include('cfg.php');
+                     include('showpage.php');
                      
+		               if($_GET['idp']='')
+		               {echo PokazPodstrone(1);}
+                     if($_GET['idp']='')
+		               {echo PokazPodstrone(2);}
+                     if($_GET['idp']='')
+		               {echo PokazPodstrone(3);}
+                     if($_GET['idp']='')
+		               {echo PokazPodstrone(4);}
+                     if($_GET['idp']='')
+		               {echo PokazPodstrone(5);}
+                     if($_GET['idp']='')
+		               {echo PokazPodstrone(1);}
+
+
+
+
                   ?>
                </div>
             </td>
