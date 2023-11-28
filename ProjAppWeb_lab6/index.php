@@ -38,7 +38,7 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
                      include('cfg.php');
                      include('showpage.php');
                      
-		               if($_GET['idp']='')
+			if($_GET['idp']='')
 		               {echo PokazPodstrone(1);}
                      if($_GET['idp']='')
 		               {echo PokazPodstrone(2);}
