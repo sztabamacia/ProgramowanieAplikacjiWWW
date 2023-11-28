@@ -40,16 +40,18 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
                      
 			if($_GET['idp']='')
 		               {echo PokazPodstrone(1);}
-                     if($_GET['idp']='')
-		               {echo PokazPodstrone(2);}
-                     if($_GET['idp']='')
-		               {echo PokazPodstrone(3);}
-                     if($_GET['idp']='')
-		               {echo PokazPodstrone(4);}
-                     if($_GET['idp']='')
-		               {echo PokazPodstrone(5);}
-                     if($_GET['idp']='')
+                     if($_GET['idp']='glowma')
 		               {echo PokazPodstrone(1);}
+                     if($_GET['idp']='contact')
+		               {echo PokazPodstrone(2);}
+                     if($_GET['idp']='rayman')
+		               {echo PokazPodstrone(3);}
+                     if($_GET['idp']='wot')
+		               {echo PokazPodstrone(4);}
+                     if($_GET['idp']='cs')
+		               {echo PokazPodstrone(5);}
+		     if($_GET['idp']='fifa')
+		               {echo PokazPodstrone(6);}
 
 
 
