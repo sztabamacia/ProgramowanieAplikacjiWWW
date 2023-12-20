@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontakt</title>
+    <link rel="stylesheet" type="text/css" href="../css/admin.css">
+</head>
+<body>
+
 <?php
 session_start();
 include('../cfg.php');
@@ -9,7 +18,7 @@ include('../cfg.php');
 function FormularzLogowania()
 {
     echo '
-    <form method="post">
+    <form method="post" name="logowanie">
         <label for="login">Login:</label>
         <input type="text" name="login" required><br>
         <label for="pass">Hasło:</label>
@@ -26,10 +35,10 @@ function FormularzLogowania()
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST['login'] === $login && $_POST['pass'] === $pass) {
         $_SESSION['logged_in'] = true;
-        echo 'Zalogowano pomyślnie.<br />';
+        echo '<p>Zalogowano pomyślnie.</p><br />';
     } else {
 
-        echo 'Błąd logowania. Spróbuj ponownie.';
+        echo '<p>Błąd logowania. Spróbuj ponownie.</p>';
         FormularzLogowania();
     }
 }
@@ -40,7 +49,7 @@ elseif (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 }
 // jeśli jesteśmy zalogowani wypisuje nam się taki komunikat
 else {
-    echo 'Zalogowano. Dalsze metody administracyjne.<br />';
+    echo '<p>Zalogowano. Dalsze metody administracyjne.</p><br />';
 }
 
 //=================================================================
@@ -55,10 +64,12 @@ function ListaPodstron($conn)
     if (!isset($_SESSION['status']) || $_SESSION['status'] == 1) {
         $query = "SELECT * FROM page_list ORDER BY id ASC";
         $result = mysqli_query($conn, $query);
-
+        echo '<div class="lista">';
+        echo '<p>ID tytuł</p>';
         while ($row = mysqli_fetch_array($result)) {
-            echo $row['id'] . ' ' . $row['page_title'] . '<br/>';
+            echo '<p class="item">'. $row['id'] . ' ' . $row['page_title'] .'</p>';
         }
+        echo '</div>';
     }
 }
 
@@ -73,7 +84,6 @@ function FormularzEdycji()
     $edit = '
     <div class="edycja">
         <h1 class="heading"><b>Edytuj podstronę<b/></h1>
-        <div class="edycja">
             <form method="post" name="EditForm" enctype="multipart/form-data" action="' . $_SERVER['REQUEST_URI'] . '">
                 <table class="edycja">
                     <tr><td class="edit_4t"><b>Id podstrony: <b/></td><td><input type="text" name="id_strony" class="edycja" /></td></tr>
@@ -83,7 +93,6 @@ function FormularzEdycji()
                     <tr><td>&nbsp;</td><td><input type="submit" name="x2_submit" class="edycja" value="zmien" /></td></tr>
                 </table>
             </form>
-        </div>
     </div>
     ';
 
@@ -135,7 +144,6 @@ function FormularzDodawania()
     $add = '
     <div class="dodaj">
         <h1 class="heading"><b>Dodaj podstronę<b/></h1>
-        <div class="dodaj">
             <form method="post" name="AddForm" enctype="multipart/form-data" action="' . $_SERVER['REQUEST_URI'] . '">
                 <table class="dodaj">
                     <tr><td class="add_4t"><b>Tytuł podstrony: <b/></td><td><input type="text" name="page_title_add" class="dodaj" /></td></tr>
@@ -144,7 +152,6 @@ function FormularzDodawania()
                     <tr><td>&nbsp;</td><td><input type="submit" name="x3_submit" class="dodaj" value="dodaj" /></td></tr>
                 </table>
             </form>
-        </div>
     </div>
     ';
 
@@ -191,14 +198,12 @@ function FormularzUsuwania()
     $remove = '
     <div class="usun">
         <h1 class="heading"><b>Usuń podstronę<b/></h1>
-        <div class="usun">
             <form method="post" name="DeleteForm" enctype="multipart/form-data" action="' . $_SERVER['REQUEST_URI'] . '">
                 <table class="usun">
                     <tr><td class="rem_4t"><b>Id podstrony: <b/></td><td><input type="text" name="id_remove" class="usun" /></td></tr>
                     <tr><td>&nbsp;</td><td><input type="submit" name="x4_submit" class="usun" value="usun" /></td></tr>
                 </table>
             </form>
-        </div>
     </div>
     ';
 
@@ -252,8 +257,7 @@ function Wyloguj()
 function WylogujButton()
 {
     echo '<form method="get">
-            <input type="hidden" name="akcja" value="wyloguj">
-            <button type="submit">Wyloguj</button>
+            <input name="akcja" type="submit" value="wyloguj" />
           </form>';
 }
 
@@ -297,3 +301,5 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
 
 
 ?>
+</body>
+</html>

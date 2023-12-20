@@ -69,7 +69,6 @@ function WyslijMailKontakt()
 }
 
 
-
 PokazKontakt();
 
 WyslijMailKontakt();

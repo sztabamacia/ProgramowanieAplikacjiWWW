@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontakt</title>
+    <link rel="stylesheet" type="text/css" href="./css/contact.css">
+</head>
+<body>
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -73,12 +81,12 @@ function WyslijMailKontakt()
             $mail->Body = $_POST['wiadomosc'];
 
             $mail->send();
-            echo 'Wiadomość została wysłana.';
+            echo '<p class="success">Wiadomość została wysłana.</p>';
         } catch (Exception $e) {
-            echo 'Błąd: Wiadomość nie została wysłana. Mailer Error: ' . $mail->ErrorInfo;
+            echo '<p class="error">Błąd: Wiadomość nie została wysłana. Mailer Error:. </p> ' . $mail->ErrorInfo;
         }
     } else {
-        echo 'Wypełnij wszystkie pola.';
+        echo '<p class="tilt_user">Wypełnij wszystkie pola.</p>';
     }
 }
 
@@ -180,3 +188,5 @@ function PrzypomnijHaslo()
 
 
 ?>
+</body>
+</html>
